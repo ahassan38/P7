@@ -1,6 +1,8 @@
 import React from 'react'
+import Shaping from "../Layout/Shaping"
 import Navbar from "../Layout/Navbar"
-
+import Banner from '../Components/Banner'
+import Footer from "../Layout/Footer"
 
 import "../Styles/About.css"
 
