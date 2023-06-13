@@ -1,40 +1,71 @@
-import React, { useState } from 'react'
-import chevronUp from "../Assets/ChevronUp.png"
+import React, { useState, useRef } from 'react'
 import chevronDown from "../Assets/ChevronDown.png"
 import "../Styles/Collapse.css"
 
 
 
-function Collapse({title, content}) {
-    // défini le collapse par défaut comme fermé
-    const [contentVisible, setContentVisible] = useState(false)
+function Collapse({ title, content }) {
+	/* This is setting the initial state of the collapse. */
+	const [setActive, setActiveState] = useState('')
+	/* This is setting the initial height of the collapse to 0px. */
+	const [setHeight, setHeightState] = useState('0px')
+	/* This is setting the initial state of the rotate class. */
+	const [setRotate, setRotateState] = useState('collapse-icon')
 
-    // à chaque clic sur le collapse, ca inverse la valeur pour le ouvert/fermé
-    const affContent = () => { 
-        setContentVisible(!contentVisible) // inverse la valeur actuelle
-    }
+	/* This is setting the contentCollapse to a ref. This is used to get the height of the content. */
+	const contentCollapse = useRef(null)
 
-    // défini les classes selon si c'est visible ou caché, idem pour le chevron
-    const collapseContent = (contentVisible ? "visible" : "hidden") + " collapse"
-    const collapseChevron = (contentVisible ? chevronUp : chevronDown)
+	/**
+	 * The function toggles the collapse by changing the active state, the height state, and the rotate
+	 * state
+	 */
+	const toggleCollapse = () => {
+		setActiveState(setActive === '' ? 'active' : '')
+		setHeightState(
+			setActive === 'active'
+				? '0px'
+				: `${contentCollapse.current.scrollHeight}px`
+		)
+		setRotateState(
+			setActive === 'active' ? 'collapse-icon' : 'collapse-icon rotate'
+		)
+	}
 
-    return (
-        <div className='collapse'>
+	/* This is a way to check if the content is an array or not. If it is not an array, it will push the
+	content into the contentArray. If it is an array, it will loop through the array and push each item into
+	the contentArray. */
+	const contentArray = []
+	if (!Array.isArray(content)) {
+		contentArray.push(content)
+	} else {
+		for (let i = 0; i < 9; i++) {
+			contentArray.push(content[i])
+		}
+	}
 
-            {/* affiche le titre et le chevron */}
-            <div className='collapse__header' onClick={affContent}>
-                <span>{title}</span>
-                <div className="chevronValue">
-                    <img src={collapseChevron} alt=""/>
-                </div>
-            </div>
-
-            {/* affiche le contenu */}
-            <div className={collapseContent}>
-                <ul>{content}</ul>
-            </div>
-        </div>
-    )
+	return (
+		<div className="collapse-section">
+			{/* This is the button that is used to toggle the collapse. */}
+			<button
+				className={`collapse ${setActive}`}
+				onClick={toggleCollapse}
+			>
+				<span className="collapse-title">{title}</span>
+				<img src={chevronDown} className={`${setRotate}`} alt="" />
+			</button>
+			<div
+				ref={contentCollapse}
+				style={{ maxHeight: `${setHeight}` }}
+				className="collapse-content"
+			>
+				<div className="collapse-text">
+					{contentArray.map((content, index) => (
+						<div key={`${content}-${index}`}>{content}</div>
+					))}
+				</div>
+			</div>
+		</div>
+	)
 }
 
 export default Collapse

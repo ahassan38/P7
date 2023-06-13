@@ -1,3 +1,34 @@
+.logement {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.ficheLogement {
+    display: flex;
+    margin-top: 30px;
+}
+
+.ficheLogement h4 {
+    color: var(--colorRed);
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.ficheLogement h1 {
+    color: var(--colorRed);
+    margin: 0;
+    font-size: 36px;
+}
+
+.div-tags {
+    display: flex;
+    white-space: nowrap;
+    flex-wrap: wrap;
+}
+
+
 .tags {
     display: flex;
     align-items: center;

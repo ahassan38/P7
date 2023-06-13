@@ -1,37 +1,45 @@
 .banner-commun {
-    margin-top: 30px;
+    margin-top: 40px;
     height: 223px;
     color: var(--colorWhite);
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
 .banner {
     background: url("../Assets/BackgroundFilter.png"), url("../Assets/BackgroundHome.jpg");
     background-position: center;
     background-size: cover;
-    border-radius:10px;
+    border-radius: 25px;
 }
 
 .banner2 {
     background: url("../Assets/BackgroundFilter.png"), url("../Assets/Background.jpg");
     background-position: center;
     background-size: cover;
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
 .banner h1 {
     display: flex;
     align-items: center;
-    font-size: 3rem;
+    font-size: 48px;
+    font-weight: 500;
     justify-content: center;
     margin: 0;
     height: 100%;
 }
 
+@media (max-width: 905px) {
+    .banner h1 {
+        padding-left: 20px;
+    }
+}
 
 @media (max-width: 768px) {
     .banner h1 { 
-        font-size: 1.2rem; 
+        font-size: 24px;
+        width: 220px; 
+        padding-left: 20px;
     }
     .banner, .banner2 {
         margin: 0 auto 1.375rem;

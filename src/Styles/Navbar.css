@@ -39,6 +39,9 @@
       .navbar nav a { text-transform: uppercase; }
       .navbar nav a { font-size: 12px; }
       .navbar ul {    gap: 10px; }
-      .navbar img {   height: 45px; }
-      .navbar nav {   justify-content: center; }
+      .navbar img {  height: 35px;}
+      .navbar nav {  
+        margin-top: 10px; 
+        justify-content: center; 
+      }
   }
