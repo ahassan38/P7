@@ -17,6 +17,7 @@
     background-position: center;
     background-size: cover;
     border-radius: 25px;
+    margin-bottom: 25px;
 }
 
 .banner h1 {
@@ -41,13 +42,15 @@
         width: 220px; 
         padding-left: 20px;
     }
-    .banner, .banner2 {
+    .banner {
         margin: 0 auto 1.375rem;
         position: relative;
-        margin-top: 20px;
         width: 100%;
         height: 111px;
         background-position:left;
+    }
+    .banner2 {
+        margin-top: 0;
     }
     .banner2, .banner, .banner-commun { 
         border-radius: 10px; 

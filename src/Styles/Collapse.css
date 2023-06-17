@@ -55,14 +55,14 @@
 
 @media screen and (min-width: 768px) {
     .collapse{
-        height: 50px;
+        height: 47px;
         width: 100%;
         padding-left: 1.125rem;
     }
     .collapse-section{
         margin-bottom: 35px;
         padding: 0;
-        width: 50%;
+        width: 100%;
     }
     .collapse-title {
         font-size: 18px;
@@ -76,6 +76,9 @@
         padding-right: 1.6875rem;
         padding-bottom: 2.25rem;
         padding-left: 1.125rem;
+        font-size: 24px;
+    }
+    .collapseLogement .collapse-text {
         font-size: 18px;
     }
 }

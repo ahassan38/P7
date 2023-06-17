@@ -58,11 +58,13 @@
         height: 255px; 
     }
     .classChevronGauche { 
-        height: 30px; 
+        padding-top: 25px;
+        height: 20px; 
     }
     .classChevronDroit {
-        height: 30px;
-        left: calc(100% - 20px)
+        padding-top: 25px;
+        height: 20px;
+        left: calc(100% - 30px)
     }
     .carousel p { 
         top: 70% 

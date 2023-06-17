@@ -3,6 +3,7 @@ import Shaping from "../Layout/Shaping"
 import Navbar from "../Layout/Navbar"
 import Banner from '../Components/Banner'
 import Footer from "../Layout/Footer"
+import Collapse from '../Components/Collapse'
 
 import "../Styles/About.css"
 
